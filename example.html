@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wikiloc.js</title>
+    <script src="src/wikiloc.js"></script>
+</head>
+<body>
+    <p>Look at the console!</p>
+    <script>
+
+        let trailPage = 'https://www.wikiloc.com/hiking-trails/cilingoz-cennet-selaleleri-05-08-2018-27286246';               
+        console.log(isWikilocTrailValidation(trailPage));
+        console.log(getWikilocTrailId(trailPage));
+
+        let trailMap = 'https://www.wikiloc.com/wikiloc/embedv2.do?id=27286246&elevation=off&images=off&maptype=H';        
+        console.log(isWikilocTrailMapValidation(trailMap));
+        console.log(getWikilocTrailMapId(trailMap));
+
+    </script>
+</body>
+</html>
