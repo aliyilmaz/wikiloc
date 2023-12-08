@@ -3,23 +3,25 @@
 function isWikilocTrailValidation($link){
     $trailPageRegex = "/^(https?:\/\/)(.*\.)?\wikiloc\.com\/([^\/]+)\/(.*)/";
     preg_match($trailPageRegex, $link, $match);
-    $match = explode('-', strrev($match[4]));
-    $Id = strrev($match[0]);
-    if($match != null){
-      
-        if(is_numeric($Id) && $Id != '' && isset($Id)){ return true; }
+    if(isset($match[4])){
+        $match = explode('-', strrev($match[4]));
+        $Id = strrev($match[0]);
+        if($match != null){
+            if(is_numeric($Id) && $Id != '' && isset($Id)){ return true; }
+        }
     }
-    
     return false;
 }
 
 function getWikilocTrailId($link){
     $trailPageRegex = "/^(https?:\/\/)(.*\.)?\wikiloc\.com\/([^\/]+)\/(.*)/";
     preg_match($trailPageRegex, $link, $match);
-    $match = explode('-', strrev($match[4]));
-    $Id = strrev($match[0]);
-    if($match != null){
-        if(is_numeric($Id) && $Id != '' && isset($Id)){ return $Id; }
+    if(isset($match[4])){
+        $match = explode('-', strrev($match[4]));
+        $Id = strrev($match[0]);
+        if($match != null){
+            if(is_numeric($Id) && $Id != '' && isset($Id)){ return $Id; }
+        }
     }
     
     return null;
